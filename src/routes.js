@@ -6,6 +6,7 @@ import multerConfig from "../src/config/multer";
 import UserController from "./app/Controllers/UserController";
 import SessionController from "./app/Controllers/SessionController";
 import CollaboratorControler from "./app/Controllers/CollaboratorControler";
+import AppointmentController from "./app/Controllers/AppointmentController";
 import FileController from "./app/Controllers/FileController";
 
 import Database from "./database/index";
@@ -22,6 +23,9 @@ routes.post("/users", UserController.store);
 routes.use(authMiddlewares);
 
 routes.put("/users", UserController.update);
+
+// Rota de Agendamento
+routes.post("/appointments", AppointmentController.store);
 
 // Lista Colaboradores
 routes.get("/collaborators", CollaboratorControler.index);
