@@ -12,6 +12,7 @@ import FileController from "./app/Controllers/FileController";
 import Database from "./database/index";
 
 import authMiddlewares from "./app/middlewares/auth";
+import ScheduleController from "./app/Controllers/ScheduleController";
 
 const routes = new Router();
 const upload = new multer(multerConfig);
@@ -27,6 +28,8 @@ routes.put("/users", UserController.update);
 // Rota de Agendamento
 routes.post("/appointments", AppointmentController.store);
 routes.get("/appointments", AppointmentController.index);
+// Listagem de agendamentos colaborador
+routes.get("/schedule", ScheduleController.index);
 
 // Lista Colaboradores
 routes.get("/collaborators", CollaboratorControler.index);
