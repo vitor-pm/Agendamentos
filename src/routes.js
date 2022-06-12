@@ -7,6 +7,7 @@ import UserController from "./app/Controllers/UserController";
 import SessionController from "./app/Controllers/SessionController";
 import CollaboratorControler from "./app/Controllers/CollaboratorControler";
 import AppointmentController from "./app/Controllers/AppointmentController";
+import NotificationsController from "./app/Controllers/NotificationsController";
 import FileController from "./app/Controllers/FileController";
 
 import Database from "./database/index";
@@ -30,6 +31,11 @@ routes.post("/appointments", AppointmentController.store);
 routes.get("/appointments", AppointmentController.index);
 // Listagem de agendamentos colaborador
 routes.get("/schedule", ScheduleController.index);
+
+// Listagem de notificações
+routes.get("/notifications", NotificationsController.index);
+// Marcar notificação como lida
+routes.put("/notifications/:id", NotificationsController.update);
 
 // Lista Colaboradores
 routes.get("/collaborators", CollaboratorControler.index);
