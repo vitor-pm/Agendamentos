@@ -5,6 +5,9 @@ import File from "../app/models/File";
 import Appointment from "../app/models/Appointment";
 import databaseConfig from "../config/database";
 
+const username = "sistema";
+const password = "sistema";
+
 const models = [User, File, Appointment];
 
 class Database {
@@ -26,7 +29,7 @@ class Database {
 
     mongo() {
         this.mongoConnection = mongoose.connect(
-            "mongodb+srv://sistema:sistema@cluster0.s0cmb.mongodb.net/?retryWrites=true&w=majority",
+            `mongodb+srv://${username}:${password}@cluster0.s0cmb.mongodb.net/?retryWrites=true&w=majority`,
             { useNewUrlParser: true, useUnifiedTopology: true }
         );
     }
